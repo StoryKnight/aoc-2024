@@ -31,3 +31,10 @@ func ReadFileToString(filePath string) (string, error) {
 
 	return string(content), nil
 }
+
+// clear a map
+func Clear[M ~map[K]V, K comparable, V any](m M) {
+	for k := range m {
+		delete(m, k)
+	}
+}
